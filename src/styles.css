@@ -1,0 +1,102 @@
+/* You can add global styles to this file, and also import other style files */
+/*@import "~@angular/material/prebuilt-themes/indigo-pink.css";*/
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "https://fonts.googleapis.com/css?family=Press+Start+2P|Righteous|Roboto";
+
+::-webkit-scrollbar
+{
+  width: 10px;  /* for vertical scrollbars */
+  height: 10px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: #999999;
+}
+
+/* COLORS */
+
+/* primary */
+.bgColorPrimary01 {
+  background-color: #ffffff !important;
+}
+
+.bgColorPrimary02 {
+  background-color: #999999 !important;
+}
+
+.bgColorPrimary03 {
+  background-color: #F1EFE6 !important;
+}
+
+.borderColorPrimary01 {
+  border-color: #ffffff !important;
+}
+
+.borderColorPrimary02 {
+  border-color: #999999 !important;
+}
+
+.borderColorPrimary03 {
+  border-color: #F1EFE6 !important;
+}
+
+
+/* accent */
+.bgColorAccent01 {
+  background-color: #008EC2 !important;
+}
+
+.bgColorAccent02 {
+  background-color: #F42B17 !important;
+}
+
+.bgColorAccent03 {
+  background-color: #00b300 !important;
+}
+
+.borderColorAccent01 {
+  border-color: #008EC2 !important;
+}
+
+.borderColorAccent02 {
+  border-color: #F42B17 !important;
+}
+
+.borderColorAccent03 {
+  border-color: #00b300 !important;
+}
+
+/* text */
+.textColorPrimary01 {
+  color: #333333 !important;
+}
+
+.textColorPrimary02 {
+  color: #999999 !important;
+}
+
+.textColorPrimary03 {
+  color: #F1EFE6 !important;
+}
+
+.textColorPrimary04 {
+  color: #ffffff !important;
+}
+
+.textColorAccent01 {
+  color: #008EC2 !important;
+}
+
+.textColorAccent02 {
+  color: #F42B17 !important;
+}
+
+.textColorAccent03 {
+  color: #00b300 !important;
+}

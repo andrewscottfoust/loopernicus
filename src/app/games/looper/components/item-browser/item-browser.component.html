@@ -1,0 +1,54 @@
+<div class="itemBrowserContainer">
+  <a class="closeButton" (click)="itemBrowserStateChange('closeItemBrowser', null)" matTooltip="Close item browser" matTooltipPosition="right">
+    <i class="fa fa-close"></i>
+  </a>
+  <h3 [hidden]="menuState != 'category'">Categories</h3>
+  <h3 [hidden]="menuState != 'subcategory'">Subcategories</h3>
+  <h3 [hidden]="menuState != 'patch'">Patches</h3>
+  <h3 [hidden]="menuState != 'sample'">Samples</h3>
+  <a class="backButton" (click)="handleItemBrowserBackButton()" [hidden]="menuState == 'category'">
+    <i class="fa fa-arrow-left"></i> back</a>
+  <div *ngFor="let category of menuArray">
+
+    <div>
+      <div class="itemButton" (click)="selectedCategory = category.name; menuState='subcategory'" [hidden]="menuState != 'category'">
+        <div class="title">{{ category.name }}</div>
+        <div class="icon">
+          <i class="fa fa-arrow-right"></i>
+        </div>
+      </div>
+      <div *ngFor="let subcategory of category.subcategories">
+        <div *ngIf="selectedCategory == category.name">
+          <div class="itemButton" (click)="selectedSubcategory = subcategory.name; menuState='patch'" [hidden]="menuState != 'subcategory'">
+            <div class="title">{{ subcategory.name }}</div>
+            <div class="icon">
+              <i class="fa fa-arrow-right"></i>
+            </div>
+          </div>
+
+          <div *ngFor="let patch of subcategory.patches">
+            <div *ngIf="selectedSubcategory == subcategory.name">
+              <div class="itemButton" (click)="selectedPatch = patch; menuState='sample'" [hidden]="menuState != 'patch'">
+                <div class="title">{{ patch }}</div>
+                <div class="icon">
+                  <i class="fa fa-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngFor="let sample of samples">
+    <div *ngIf="selectedCategory == sample.category && selectedSubcategory == sample.subcategory && selectedPatch == sample.patch">
+      <div class="itemButton sample" [hidden]="menuState != 'sample'">
+        <div class="title" (click)="playSample(sample)">{{ sample.sample }}</div>
+        <div class="icon">
+          <i class="fa fa-play-circle-o" (click)="playSample(sample)"></i>
+          <i class="fa fa-plus" (click)="itemBrowserStateChange('addItem', sample)"></i>
+        </div>
+      </div>
+    </div>
+  </div>

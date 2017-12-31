@@ -1,0 +1,82 @@
+.main-nav {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 200;
+}
+
+.main-nav.open {
+    width: 320px;
+    top: 10px;
+    right: 10px;
+    background-color: #ffffff;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    border: 2px solid #666666;
+    box-shadow: 3px 3px 3px 0px rgba(50, 50, 50, 0.4);
+}
+
+.main-nav .main-nav-open-btn,
+.main-nav .main-nav-close-btn {
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border: 2px solid #999999;
+    border-radius: 10px;
+    display: block;
+    font-size: 30px;
+    text-align: center;
+    color: #999999;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px 0px rgba(50, 50, 50, 0.4);
+}
+
+.main-nav .main-nav-close-btn {
+    width: 20px;
+    height: 20px;
+    background-color: none;
+    border: none;
+    font-size: 20px;
+    top: 0px;
+    right: 4px;
+    color: #999999;
+    box-shadow: none;
+}
+
+.main-nav .main-nav-open-btn:hover {
+    color: #666666;
+}
+
+.main-nav .main-nav-close-btn:hover {
+    color: #666666;
+}
+
+.main-nav .nav-items {
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+}
+
+.main-nav .nav-items .nav-link-item {
+    width: 100%;
+    border-bottom: 2px solid #eeeeee;
+    padding: 10px 10px 10px 10px;
+}
+
+.main-nav .nav-items .nav-link-item:last-of-type {
+    border-bottom: none;
+}
+
+.main-nav .nav-items .nav-link-item a {
+    color: #999999;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.main-nav .nav-items .nav-link-item a:hover {
+    color: #666666;
+    text-decoration: none;
+}

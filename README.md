@@ -1,2 +1,0 @@
-# loopernicus
-Online Step Sequencer

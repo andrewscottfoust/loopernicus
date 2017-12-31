@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="sampleList">
+    <div *ngFor="let sample of samples$" class="sample">
+      <div class="sampleItemButton" (click)="playSample(sample)">
+        <div class="icon">
+          <i class="fa fa-play-circle"></i>
+        </div>
+        <div class="title">{{ sample.name }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <a (click)="addSample()">Add Sample</a>
+  </div>
+</div>

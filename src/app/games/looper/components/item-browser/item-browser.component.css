@@ -1,0 +1,127 @@
+.itemBrowserContainer {
+    font-family: 'Roboto', sans-serif;
+    color: #999999;
+}
+.itemBrowserContainer h3 {
+    font-size: 18px;
+    color: #999999;
+    margin: 10px 0px 10px 0px;
+}
+.itemBrowserContainer .closeButton {
+    width: 30px;
+    text-align: center;
+    display: block;
+    color: #999999;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.itemBrowserContainer .closeButton:hover {
+    color: #666666;
+}
+
+.itemBrowserContainer .backButton {
+    width: 100%;
+    text-align: left;
+    display: block;
+    font-size: 12px;
+    color: #999999;
+    cursor: pointer;
+    margin: 10px 0px 10px 0px;
+}
+
+.itemBrowserContainer .backButton:hover {
+    color: #666666;
+}
+
+.itemBrowserContainer .item {
+    width: 99%;
+    float: left;
+    margin: 0px .5% 0px .5%;
+    padding: 0px;
+}
+
+.itemBrowserContainer .itemButton {
+    width: 100%;
+    background-color: #ffffff;
+    border: 2px solid #999999;
+    border-radius: 5px;
+    font-size: 10px;
+    cursor: pointer;
+    display: inline-block;
+    color: #999999;
+    margin-bottom: 0px;
+}
+
+.itemBrowserContainer .itemButton:hover {
+    background-color: #eeeeee;
+}
+
+.itemBrowserContainer .itemButton:active {
+    background-color: #666666;
+    color: #ffffff;
+}
+
+.itemBrowserContainer .itemButton .icon {
+    width: 20%;
+    height: 30px;
+    font-size: 22px;
+    padding: 3px 5px 0px 10px;
+    float: left;
+    text-align: center;
+}
+
+.itemBrowserContainer .itemButton.sample .icon {
+    width: 30%;
+}
+
+.itemBrowserContainer .itemButton .icon i {
+    width: 100%;
+    float: left;
+}
+
+.itemBrowserContainer .itemButton.sample .icon i {
+    width: 50%;
+    float: left;
+}
+
+.itemBrowserContainer .itemButton .title {
+    width: 80%;
+    float: left;
+    padding: 7px 3px 3px 10px;
+}
+
+.itemBrowserContainer .itemButton.sample .title {
+    width: 70%;
+}
+
+.itemBrowserContainer .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: #999999;
+}
+
+.itemBrowserContainer .mat-form-field-ripple {
+    background-color: #999999;
+}
+
+.itemBrowserContainer .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+    color: #999999;
+}
+
+.itemBrowserContainer .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: #999999;
+}
+
+.itemBrowserContainer .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: #999999;
+}
+
+.itemBrowserContainer .mat-form-field-infix {
+    width: 100%;
+    color: #999999;
+}
+
+.itemBrowserContainer .mat-select-value {
+    color: #999999;
+}

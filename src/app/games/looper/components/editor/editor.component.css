@@ -1,0 +1,551 @@
+.editor .itemBrowser {
+    width: 25%;
+    min-width: 320px;
+    background-color: #F1EFE6;
+    border-right: 2px solid #666666;
+    padding: 10px 10px 10px 10px;
+    margin: 0px;
+    border-radius: 0px;
+    display: none;
+    float: left;
+    position: fixed;
+    top: 0px;
+    height: 100%;
+    overflow-y: scroll;
+    z-index: 100;
+    box-shadow: 3px 3px 3px 0px rgba(50, 50, 50, 0.4);
+}
+
+.itemBrowserOpen .itemBrowser {
+    display: block;
+}
+
+
+.editor {
+	width: 100%;
+	display: inline-block;
+	font-family: 'Roboto', sans-serif;
+}
+/* BACK BAR */
+.backBar {
+	width: 100%;
+	background-color: #F1EFE6;
+	color: #666666;
+	margin: 4px 0px 0px 0px;
+	padding: 0px 10px 0px 10px;
+	text-align: left;
+	font-size: 14px;
+	cursor: pointer;
+	border: 2px solid #666666;
+	border-left: none;
+	border-right: none;
+	box-shadow: 3px 3px 3px 0px rgba(50, 50, 50, 0.4);
+}
+/* SETTINGS BAR */
+.settingsBar {
+	width: 100%;
+	display: inline-block;
+	border: 4px solid;
+	border-left: none;
+	border-right: none;
+	margin: 6px 0px 0px 0px;
+	box-shadow: 3px 3px 3px 0px rgba(50, 50, 50, 0.4);
+}
+.settingsBar .info {
+	width: 35%;
+	height: 72px;
+	float: left;
+	padding: 4px 4px 4px 4px;
+}
+.settingsBar .info .infoContainer {
+	height: 64px;
+	border-radius: 10px;
+	background-color: #ffffff;
+	border: 2px solid #999999;
+	padding: 4px 4px 4px 4px;
+	box-shadow: inset 2px 2px 4px rgba(0,0,0, .2);
+}
+.settingsBar .info input {
+	width: 98%;
+	background-color: transparent;
+	font-size: 11px;
+	color: #999999;
+	border: none;
+	padding: 1px;
+	margin: 0px 0px 2px 10px;
+}
+.settingsBar .info .title {
+	font-size: 10px;
+	font-weight: bold;
+}
+.settingsBar .info .category {
+	font-size: 10px;
+	font-style: italic;
+}
+.mat-form-field {
+	font-size: 12px;
+	margin: 0px 0px 0px 0px;
+}
+.settingsBar .info .description {
+	font-size: 10px;
+}
+.settingsBar .controls {
+	width: 30%;
+	height: 72px;
+	float: left;
+}
+.settingsBar .controls .controlsContainer {
+	width: 350px;
+	margin: 0px auto 0px auto;
+	border-radius: 10px;
+	padding: 0px 10px 0px 10px;
+}
+.settingsBar .controls .controlsContainer .buttons {
+	width: 60px;
+	float: left;
+}
+.mat-accent .mat-slider-thumb,
+.mat-accent .mat-slider-thumb-label,
+.mat-accent .mat-slider-track-fill {
+	background-color: #999 !important;
+}
+.settingsBar .controls input {
+	width: 90px;
+	background-color: #fff;
+	font-size: 30px;
+	text-align: center;
+	color: #999999;
+	border: 2px solid #999999;
+	padding: 1px;
+	margin: 20px 10px 0px 10px;
+	padding: 0px 0px 2px 10px;
+	display: block;
+	float: left;
+}
+.settingsBar .controls .playButton,
+.settingsBar .controls .stopButton {
+	width: 50px;
+	height: 50px;
+	background-color: #ffffff;
+	border-radius: 10px;
+	border: 2px solid;
+	font-size: 20px;
+	color: #999999;
+	display: block;
+	text-align: center;
+	margin: 9px 0px 0px 0px;
+	padding: 9px 0px 0px 3px;
+	box-shadow: 3px 3px 3px 0px rgba(50, 50, 50, 0.4);
+	cursor: pointer;
+}
+.settingsBar .controls .stopButton {
+	font-size: 18px;
+	margin: 9px 0px 0px 0px;
+	padding: 10px 0px 0px 0px;
+}
+.settingsBar .controls .playButton:hover,
+.settingsBar .controls .stopButton:hover {
+	background-color: #F42B17;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+.settingsBar .controls .controlsContainer .sliders {
+	width: 210px;
+	float: left;
+	padding: 13px 10px 0px 10px;
+}
+.settingsBar .controls .controlsContainer .sliders .mat-slider-horizontal {
+	height: 30px;
+	width: 130px;
+	display: block;
+	float: left;
+}
+.settingsBar .controls .controlsContainer .sliders span {
+	width: 70px;
+	height: 30px;
+	display: block;
+	float: left;
+	padding: 12px 0px 0px 0px;
+	text-align: center;
+	font-size: 14px;
+}
+.settingsBar .controls .controlsContainer .sliders .tempo,
+.settingsBar .controls .controlsContainer .sliders .volume {
+	width: 200px;
+	color: #999999;
+}
+.settingsBar .controls .controlsContainer .sliders .tempo:after,
+.settingsBar .controls .controlsContainer .sliders .volume:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.loopButtonContainer {
+	width: 60px;
+	height: 72px;
+	float: left;
+	font-size: 30px;
+	color: #999999;
+	padding: 13px 0px 0px 0px;
+	text-align: center;
+}
+.loopButtonContainer .loopButton {
+	display: block;
+	cursor: pointer;
+}
+.loopButtonContainer .loopButton.active,
+.loopButtonContainer .loopButton.active:hover {
+	color: #F42B17;
+}
+.settingsBar .editButtons {
+	width: 35%;
+	float: left;
+	padding: 6px 0px 6px 0px;
+}
+.settingsBar .editButtons .saveButton,
+.settingsBar .editButtons .deleteButton,
+.settingsBar .measuresNavigator .measureButton {
+	width: 40%;
+	font-size: 12px;
+	color: #999999;
+	text-align: center;
+	background-color: #ffffff;
+	border-radius: 10px;
+	border: 2px solid #999999;
+	display: block;
+	padding: 4px 4px 4px 4px;
+	margin: 0px 5% 4px 5%;
+	box-shadow: 3px 3px 3px 0px rgba(50, 50, 50, 0.4);
+	float: left;
+	cursor: pointer;
+}
+.settingsBar .editButtons .saveButton:hover,
+.settingsBar .editButtons .deleteButton:hover,
+.settingsBar .measuresNavigator .measureButton:hover,
+.settingsBar .macroEditButtons .macroEditButton:hover,
+.settingsBar .macroEditButtons .standardEditButton:hover {
+	background-color: #F42B17;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+.settingsBar .measuresInput {
+	width: 15%;
+	height: 72px;
+	float: left;
+	padding: 22px 0px 2px 0px;
+	/* border-top: 2px solid #999999; */
+	color: #999999;
+}
+.settingsBar .measuresInput .measureInputLabel {
+	font-size: 14px;
+	display: inline-block;
+}
+.settingsBar .measuresInput input {
+	width: 30%;
+	display: inline-block;
+	text-align: center;
+	border-radius: 6px;
+	border: 2px solid #999999;
+	font-size: 16px;
+	color: #999999;
+	padding: 2px 2px 2px 2px;
+	box-shadow: inset 2px 2px 4px rgba(0,0,0, .2);
+}
+.settingsBar .measuresNavigator {
+	width: 20%;
+	height: 72px;
+	float: left;
+	padding: 22px 0px 0px 0px;
+	color: #999999;
+	text-align: center;
+}
+.settingsBar .measuresNavigator .measureButtons {
+
+}
+.settingsBar .measuresNavigator .measureButtons .measureButton {
+	width: 28%;
+	display: inline-block;
+	float: none;
+	margin: 0px 5% 0px 5%;
+	font-size: 10px;
+}
+.settingsBar .measuresNavigator .currentMeasure {
+	width: 20%;
+	display: inline-block;
+	margin: 0px;
+}
+.settingsBar .macroEditButtons {
+	width: 20%;
+	float: left;
+}
+
+.settingsBar .macroEditButtons .macroEditButton,
+.settingsBar .macroEditButtons .standardEditButton {
+	width: 90%;
+	font-size: 12px;
+	color: #999999;
+	text-align: center;
+	background-color: #ffffff;
+	border-radius: 10px;
+	border: 2px solid #999999;
+	display: block;
+	padding: 4px 4px 4px 4px;
+	margin: 0px 5% 4px 5%;
+	box-shadow: 3px 3px 3px 0px rgba(50, 50, 50, 0.4);
+	cursor: pointer;
+}
+
+/* MACRO TRACK EDITOR */
+
+.macroTrackEditor .trackControls .active {
+	color: #F42B17;
+}
+.macroTrackEditor .tracks .track .trackItems .trackItem .trackLink:hover {
+	border-color: #666666;
+}
+.macroTrackEditor .tracks .track .trackItems .trackItem .trackLink.playing {
+	background-color: #F1EFE6;
+}
+.macroTrackEditor .tracks .track .trackItems .trackItem .trackLink.active {
+	background-color: #008EC2;
+	color: #fff;
+	border-width: 3px;
+	border-color: #666666;
+}
+.macroTrackEditor .tracks .track .trackItems .trackItem .trackLink.active.playing {
+	background-color: #F42B17;
+	border: 2px solid #666666;
+	transition: none;
+}
+.macroTrackEditor .addTrackButton {
+	width: 30px;
+	font-size: 30px;
+	color: #999999 !important;
+	margin: 14px 10px 10px 20px;
+	display: block;
+	cursor: pointer;
+}
+.macroTrackEditor {
+	width: 100%;
+	position: absolute;
+	top: 235px;
+	left: 0px;
+	overflow-x: scroll;
+}
+.macroTrackEditor .track {
+	/*min-width: 10000px;*/
+	background-color: #F1EFE6;
+	border: 2px solid #666666;
+	border-left: none;
+	border-right: none;
+	padding: 0px;
+	margin: 5px 0px 5px 0px;
+	box-shadow: 3px 3px 3px 0px rgba(50, 50, 50, 0.4);
+}
+.macroTrackEditor .trackVolume,
+.macroTrackEditor .trackPan {
+	width: 50%;
+	float: left;
+	font-size: 14px;
+	line-height: 14px;
+	color: #999999;
+	text-align: center;
+	padding: 0px 0px 0px 0px;
+	cursor: pointer;
+}
+.macroTrackEditor .mat-slider-horizontal {
+    height: 48px;
+    min-width: 128px;
+}
+.macroTrackEditor .trackSettings {
+	float: left;
+}
+.macroTrackEditor .trackSettings .top {
+	width: 100%;
+	height: 50px;
+}
+.macroTrackEditor .trackSettings .bottom {
+	width: 100%;
+	height: 50px;
+	border-top: 2px solid #999999;
+	border-right: 2px solid #999999;
+}
+.macroTrackEditor .track:after,
+.macroTrackEditor .track .trackItems:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.macroTrackEditor .trackInfo {
+	width: 30px;
+	height: 50px;
+	float: left;
+	font-family: 'Righteous', cursive;
+	font-size: 14px;
+	text-align: center;
+	color: #ffffff;
+	background-color: #999999;
+	padding: 14px 0px 0px 0px;
+	cursor: pointer;
+}
+.macroTrackEditor .trackName {
+	width: 40px;
+	height: 50px;
+	background-color: #ffffff;
+	overflow: hidden;
+	float: left;
+	font-size: 12px;
+	color: #999999;
+	border-right: 2px solid #999999;
+}
+.macroTrackEditor .trackName i {
+	font-size: 22px;
+	padding: 13px 12px 12px 12px;
+	float: left;
+	cursor: pointer;
+}
+.macroTrackEditor .trackName i:hover {
+	color: #666666;
+}
+.macroTrackEditor .trackName .sampleName {
+	float: left;
+	padding: 15px 0px 0px 0px;
+	cursor: pointer;
+}
+.macroTrackEditor .trackName .sampleName:hover {
+	color: #666666;
+}
+.macroTrackEditor .trackName.open {
+	width: 350px;
+}
+.macroTrackEditor .trackControls {
+	width: 90px;
+	height: 50px;
+	background-color: #999999;
+	float: left;
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	border-right: 2px solid #999999;
+	padding-top: 10px;
+}
+.macroTrackEditor .trackControls i {
+	display: inline-block;
+	margin: 0px 2px 0px 2px;
+	cursor: pointer;
+}
+.macroTrackEditor .trackControls i:hover {
+	color: #cccccc;
+}
+.macroTrackEditor .trackControls .fa-volume-up {
+	display: inline-block;
+}
+.macroTrackEditor .trackControls .active .fa-volume-up {
+	display: none;
+}
+.macroTrackEditor .trackControls .fa-volume-off {
+	display: none;
+}
+.macroTrackEditor .trackControls .active .fa-volume-off {
+	display: inline-block;
+}
+.macroTrackEditor .trackItems {
+	float: left;
+	height: 50px;
+	padding-left: 8px;
+}
+.macroTrackEditor .trackItems.open {
+	height: 52px;
+	border-bottom: 2px solid #999999;
+}
+.macroTrackEditor .track.selected {
+	border-color: #F42B17;
+}
+.macroTrackEditor .track .trackItem {
+	width: 40px;
+	height: 50px;
+	display: inline-block;
+	padding: 10px 0px 0px 0px;
+	margin: 0px 2px 0px 2px;
+}
+.macroTrackEditor .track .trackItem.measureBeat {
+	border-left: 1px solid #cccccc;
+	padding-left: 8px;
+	margin-right: 8px;
+}
+.macroTrackEditor .track .trackItem.firstInMeasure {
+	border-left: 2px solid #999999;
+	padding-left: 8px;
+	margin-right: 8px;
+}
+.macroTrackEditor .track .trackItem .trackLink {
+	width: 30px;
+	height: 30px;
+	background-color: #ffffff;
+	color: #999;
+	border: 2px solid #999999;
+	border-radius: 20px;
+	display: block;
+	/* box-shadow: 3px 3px 3px 0px rgba(50, 50, 50, 0.4); */
+	cursor: pointer;
+}
+.macroTrackEditor .trackDelete {
+	width: 40px;
+	height: 50px;
+	background-color: #ffffff;
+	float: left;
+	font-size: 20px;
+	color: #999999;
+	text-align: center;
+	border-right: 2px solid #999999;
+	/* margin-right: 8px; */
+	padding-top: 10px;
+}
+.macroTrackEditor .trackDelete i {
+	display: inline-block;
+	margin: 0px 2px 0px 2px;
+	cursor: pointer;
+}
+.macroTrackEditor .trackDelete i:hover {
+	color: #F42B17;
+}
+@media (max-width: 1200px) {
+	.settingsBar {
+		width: 100%;
+		height: auto;
+		display: inline-block;
+		background-color: #F1EFE6;
+		border: 2px solid #666666;
+		border-left: none;
+		border-right: none;
+		margin: 6px 0px 0px 0px;
+		box-shadow: 3px 3px 3px 0px rgba(50, 50, 50, 0.4);
+	}
+	.settingsBar .info {
+		width: 100%;
+		float: none;
+		border-bottom: 1px solid #999999;
+	}
+	.settingsBar .controls {
+		width: 50%;
+	}
+	.settingsBar .editButtons {
+		width: 50%;
+	}
+}
+@media (max-width: 768px) {
+	.settingsBar .controls {
+		width: 100%;
+		float: none;
+		border: none;
+		border-bottom: 1px solid #999999;
+	}
+	.settingsBar .editButtons {
+		width: 100%;
+		float: none;
+		border: none;
+	}
+	.trackEditor .tracks .track .trackItems .trackItem {
+		width: 12.5%;
+	}
+}

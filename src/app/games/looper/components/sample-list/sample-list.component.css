@@ -1,0 +1,54 @@
+.sampleList {
+    background-color: #999999;
+    border: 1px solid #333333;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+}
+
+.sample {
+    width: 32%;
+    float: left;
+    margin: 0px .5% 0px .5%;
+    padding: 0px;
+    display: block;
+}
+
+.sampleItem {
+    padding: 4px;
+}
+
+.sampleItemButton {
+    width: 100%;
+    background-color: #eeeeee;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    font-size: 10px;
+    cursor: pointer;
+    display: inline-block;
+    color: #333333;
+    transition: all .3s ease-in-out;
+}
+
+.sampleItemButton:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.sampleItemButton:active {
+    background-color: #666666;
+    color: #ffffff;
+}
+
+.sampleItemButton .icon {
+    width: 15%;
+    height: 30px;
+    font-size: 20px;
+    padding-left: 5px;
+    float: left;
+}
+
+.sampleItemButton .title {
+    width: 85%;
+    float: left;
+    padding: 7px 3px 3px 3px;
+}

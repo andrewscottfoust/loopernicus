@@ -1,0 +1,30 @@
+<div class="loop-list">
+  <div class="loop-about">
+    <h1>What is Loopernicus?</h1>
+    <p>
+      Loopernicus is a super sweet online step sequencer. Create a free account and have some fun creating some loops or even full-length songs.</p>
+  </div>
+  <div class="loop-projects">
+    <h2>Projects</h2>
+    <p>
+      Below you can listen to previous projects or
+      <a [routerLink]="'/editor'">create a new project</a>.
+    </p>
+    <a class="create-new-project-btn" [routerLink]="'/editor'">
+      <i class="fa fa-plus"></i> Create New Project</a>
+    <div class="loop-items">
+      <div *ngFor="let loop of loops$" class="loop-item">
+        <h4><a class="loop-icon-item" [routerLink]="['editor/'+loop.key]" (click)="stopLoop()">{{ loop.name }}</a></h4>
+        <a class="loop-icon-item" (click)="playLoop(loop)" [hidden]="loopPlayer.projectPlaying">
+          <i class="fa fa-play-circle-o"></i>
+        </a>
+        <a class="loop-icon-item" (click)="stopLoop()" [hidden]="!loopPlayer.projectPlaying">
+          <i class="fa fa-stop-circle-o"></i>
+        </a>
+        <a class="loop-icon-item" [routerLink]="['/editor/'+loop.key]" (click)="stopLoop()">
+          <i class="fa fa-edit"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

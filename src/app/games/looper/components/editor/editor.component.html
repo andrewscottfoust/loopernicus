@@ -1,0 +1,150 @@
+<app-looper-header></app-looper-header>
+<div class="editor loop" [class.itemBrowserOpen]="itemBrowserOpen">
+  <div class="backBar" routerLink="/">
+    <i class="fa fa-arrow-circle-o-left"></i> Back
+  </div>
+  <!--SETTINGS BAR-->
+  <div class="settingsBar bgColorPrimary03 borderColorPrimary02">
+    <div class="info">
+      <div class="infoContainer">
+        <input type="text" class="form-control title bgColorPrimary01 textColorPrimary02" mdInput [(ngModel)]="project.name" name="projectName"
+          #projectName="ngModel" matTooltip="Enter a title" matTooltipPosition="below" (change)="projectHasBeenEdited = true">
+        <input type="text" class="form-control category bgColorPrimary01 textColorPrimary02" mdInput [(ngModel)]="project.category"
+          name="projectCategory" #projectCategory="ngModel" matTooltip="Enter a category" matTooltipPosition="below" [matMenuTriggerFor]="categoryMenu"
+          (change)="projectHasBeenEdited = true">
+
+        <input type="text" class="form-control description bgColorPrimary01 textColorPrimary02" mdInput [(ngModel)]="project.description"
+          name="projectDescription" #projectDescription="ngModel" matTooltip="Enter a description" matTooltipPosition="below"
+          (change)="projectHasBeenEdited = true">
+        <mat-menu #categoryMenu="matMenu" (change)="projectHasBeenEdited = true">
+          <button mat-menu-item *ngFor="let category of categories" (click)="updateCategory(category)">{{ category }}</button>
+        </mat-menu>
+      </div>
+    </div>
+    <div class="controls">
+      <div class="controlsContainer">
+        <div class="buttons">
+          <a class="playButton borderColorPrimary02" (click)="play()" [hidden]="projectPlayer.projectPlaying" matTooltip="Play" matTooltipPosition="below">
+            <i class="fa fa-play"></i>
+          </a>
+          <a class="stopButton borderColorPrimary02" (click)="stop()" [hidden]="!projectPlayer.projectPlaying" matTooltip="Stop" matTooltipPosition="below">
+            <i class="fa fa-stop"></i>
+          </a>
+        </div>
+        <div class="sliders">
+          <div class="tempo">
+            <span>{{ getBPM(project.tempo) | number: '1.0-2' }}
+              <i class="fa fa-clock-o"></i>
+            </span>
+            <mat-slider min="1" max="300" step="0.1" invert [(ngModel)]="project.tempo" matTooltip="Tempo" matTooltipPosition="below"
+              [disabled]="projectPlaying" (change)="projectHasBeenEdited = true;"></mat-slider>
+          </div>
+        </div>
+        <div class="loopButtonContainer">
+          <a class="loopButton" [class.active]="loopPlayback" (click)="handleLoopButtonClick(); projectHasBeenEdited = true;" matTooltip="Loop playback"
+            matTooltipPosition="below">
+            <i class="fa fa-repeat"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="measuresInput">
+      <div class="measureInputLabel">Total measures:</div>
+      <input type="number" class="form-control" min="0" max="200" mdInput [ngModel]="project.measures" name="projectMeasures" #projectMeasures="ngModel"
+        matTooltip="Enter number of measures for your project" matTooltipPosition="below" (change)="projectHasBeenEdited = true; measuresInputChange(projectMeasures.value);">
+    </div>
+    <div class="measuresNavigator">
+      <div class="measureButtons" [hidden]="macroEdit">
+        <a class="measureButton" (click)="projectPlayer.changeMeasure('prev')">
+          <i class="fa fa-chevron-left"></i>
+        </a>
+        <div class="currentMeasure">
+          {{ projectPlayer.curMeasure + 1 }}
+        </div>
+        <a class="measureButton" (click)="projectPlayer.changeMeasure('next')">
+          <i class="fa fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+    <div class="editButtons" [hidden]="!editorIsCreator">
+      <button class="saveButton" (click)="saveProject()" matTooltip="Save project" matTooltipPosition="below" [hidden]="!projectHasBeenEdited">
+        <i class="fa fa-save"></i> Save</button>
+      <button class="deleteButton" (click)="deleteProject()" [hidden]="!editorIsCreator" matTooltip="Delete project" matTooltipPosition="below">
+        <i class="fa fa-remove"></i> Delete</button>
+    </div>
+  </div>
+
+  <!-- ITEM BROWSER(PATCH) -->
+  <div class="itemBrowser">
+    <app-item-browser [type]="'sample'" (change)="itemBrowserUpdated($event)"></app-item-browser>
+  </div>
+  <!-- MACRO EDITOR -->
+  <div *ngIf="macroEdit">
+    <div class="macroTrackEditor">
+      <div class="tracks">
+        <div class="track" *ngFor="let track of project.data; let t = index;" [class.selected]="t == editTrackNum" [style.width.px]="515 + (project.measures * 740)">
+          <div class="trackSettings">
+            <div class="top">
+              <div class="trackInfo" (click)="changeTrack(t)">
+                {{ t + 1 }}
+              </div>
+              <div class="trackName" [class.open]="macroTrackDetailsOpen">
+                <a (click)="macroTrackDetailsOpen = true">
+                  <i class="fa fa-arrow-right" [hidden]="macroTrackDetailsOpen"></i>
+                </a>
+                <a (click)="macroTrackDetailsOpen = false">
+                  <i class="fa fa-arrow-left" [hidden]="!macroTrackDetailsOpen"></i>
+                </a>
+                <div class="sampleName" [hidden]="!macroTrackDetailsOpen" (click)="changeTrack(t)">{{ track.sampleName }}</div>
+              </div>
+              <div class="trackControls" [hidden]="!macroTrackDetailsOpen">
+                <a (click)="track.randomizeVolume = !track.randomizeVolume; projectHasBeenEdited = true;" class="randomizeVolumeButton" [class.active]="track.randomizeVolume" matTooltip="Randomize track volume"
+                    matTooltipPosition="below">
+                    <i class="fa fa-random"></i>
+                </a>
+                <a (click)="enableRecording(t)" class="randomizeVolumeButton" [class.active]="recordTrackNum == t" matTooltip="Enable track recording"
+                  matTooltipPosition="below">
+                  <i class="fa fa-microphone"></i>
+                </a>
+                <a (click)="muteTrack(t); projectHasBeenEdited = true;" class="muteButton" [class.active]="track.muted" matTooltip="Mute track"
+                  matTooltipPosition="below">
+                  <i class="fa fa-volume-up"></i>
+                  <i class="fa fa-volume-off"></i>
+                </a>
+              </div>
+              <div class="trackDelete" [hidden]="!macroTrackDetailsOpen">
+                <a (click)="deleteTrack(t)" class="deleteTrackButton" matTooltip="Delete track" matTooltipPosition="below">
+                  <i class="fa fa-close"></i>
+                </a>
+              </div>
+            </div>
+            <div class="bottom" [hidden]="!macroTrackDetailsOpen">
+              <div class="trackVolume">
+                <span>{{ track.loopVolume * 100 | number: '1.0-2' }}
+                  <i class="fa fa-volume-up"></i>
+                </span>
+                <mat-slider min="0" max="1" step="0.01" [(ngModel)]="track.loopVolume" matTooltip="Volume" matTooltipPosition="below" (change)="projectHasBeenEdited = true;"></mat-slider>
+              </div>
+              <div class="trackPan">
+                <span>{{ track.pan * 100 | number: '1.0-2' }}
+                  <i class="fa fa-chevron-left"></i>
+                  <i class="fa fa-chevron-right"></i>
+                </span>
+                <mat-slider min="-1" max="1" step="0.1" [(ngModel)]="track.pan" matTooltip="Pan" matTooltipPosition="below" (change)="projectHasBeenEdited = true;"></mat-slider>
+              </div>
+            </div>
+          </div>
+          <div class="trackItems" [class.open]="macroTrackDetailsOpen">
+            <div class="trackItem" *ngFor="let button of track.data; let i = index;" [class.firstInMeasure]="i >= 16 && (i % 16) == 0"
+              [class.measureBeat]="i >= 4 && (i % 4) == 0">
+              <a class="trackLink" [class.active]="button == 1" [class.playing]="projectPlayer.position == i" (click)="updateProject(t, i); projectHasBeenEdited = true;"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="addTrackButton" (click)="itemBrowserOpen = true; isNewTrack = true;" matTooltip="Add new track" matTooltipPosition="right">
+        <i class="fa fa-plus"></i>
+      </a>
+    </div>
+  </div>
+</div>

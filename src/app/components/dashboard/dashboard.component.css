@@ -1,0 +1,68 @@
+.dashboard {
+    padding: 50px 0px 50px 0px;
+}
+.dashboard h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    color: #999999;
+}
+.dashboard p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #666666;
+}
+.dashboard a {
+    text-decoration: none;
+    color: #ffffff;
+}
+.dashboard a:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+.game-item {
+    width: 50%;
+    padding: 40px 40px 40px 40px;
+    text-align: center;
+    border: 4px solid #cccccc;
+    margin: 0px auto 50px auto;
+    border-radius: 20px;
+    text-decoration: none;
+    box-shadow: 3px 3px 3px 0px rgba(50, 50, 50, 0.4);
+    float: left;
+}
+.game-item:hover {
+    border-color: #666666;
+}
+.game-item.looper {
+    background-color: #F42B17;
+}
+.game-item.looper h2 {
+    font-family: 'Righteous', cursive;
+    font-size: 80px;
+    color: #ffffff;
+}
+.game-item.looper p {
+    max-width: 600px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0px auto 0px auto;
+}
+.game-item.pixelartcreator {
+    background-color: #999999;
+}
+.game-item.pixelartcreator h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 40px;
+    color: #ffffff;
+}
+.game-item.pixelartcreator h2 i {
+    font-size: 55px;
+}
+.game-item.pixelartcreator p {
+    max-width: 600px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0px auto 0px auto;
+}
