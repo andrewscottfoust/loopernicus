@@ -1,0 +1,21 @@
+.login-component {
+    width: 60%;
+    margin: 50px auto 50px auto;
+    color: #ffffff;
+}
+
+.login-component h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+
+.login-component .btn {
+    background-color: #FF0D3E;
+    border: 2px solid #999999;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.login-component .btn:hover {
+    background-color: #999999;
+}

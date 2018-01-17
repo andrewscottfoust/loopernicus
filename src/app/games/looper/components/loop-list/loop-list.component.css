@@ -4,19 +4,23 @@
     margin: 50px auto 30px auto;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
-    color: #666666;
+    color: #ffffff;
+}
+
+.loop-list a {
+    color: #ffd740;
 }
 
 .loop-list h1 {
     font-family: 'Righteous', cursive;
     font-size: 35px;
-    color: #999999;
+    color: #ffffff;
 }
 
 .loop-list h2 {
     font-family: 'Righteous', cursive;
     font-size: 25px;
-    color: #999999;
+    color: #ffffff;
 }
 
 .loop-list .loop-about {
@@ -27,7 +31,7 @@
 
 .loop-list .loop-projects {
     width: 100%;
-    background-color: #F1EFE6;
+    background-color: #161616;
     border-radius: 10px;
     border: 2px solid #999999;
     padding: 20px 20px 20px 20px;
@@ -37,10 +41,10 @@
 .loop-list .loop-projects .create-new-project-btn {
     width: 50%;
 	font-size: 20px;
-	color: #999999;
+	color: #ffffff;
     text-align: center;
     text-decoration: none;
-	background-color: #ffffff;
+	background-color: #FF0047;
 	border-radius: 10px;
 	border: 2px solid #999999;
 	display: block;
@@ -51,7 +55,7 @@
 }
 
 .loop-list .loop-projects .create-new-project-btn:hover {
-	background-color: #F42B17;
+	background-color: #999999;
     color: #ffffff;
     border-color: #ffffff;
 }
@@ -63,10 +67,14 @@
 .loop-list .loop-projects .loop-items .loop-item {
     width: 100%;
     font-size: 12px;
-    color: #666666;
+    color: #ffd740;
     border-bottom: 2px solid #cccccc;
     margin: 0px 0px 10px 0px;
     padding: 4px 0px 4px 0px;
+}
+
+.loop-list .loop-projects .loop-items .loop-item:last-of-type {
+    border-bottom: none;
 }
 
 .loop-list .loop-projects .loop-items .loop-item:after {
@@ -86,7 +94,7 @@
     width: 100%;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
-    color: #999999;
+    color: #ffd740;
     display: block;
     text-decoration: none;
     text-align: left;
@@ -94,7 +102,7 @@
 }
 
 .loop-list .loop-projects .loop-items .loop-item h4 a:hover {
-    color: #666666;
+    color: #999999;
     text-decoration: none;
 }
 
@@ -103,11 +111,11 @@
     float: left;
     font-size: 25px;
     text-align: center;
-    color: #999999;
+    color: #ffd740;
     cursor: pointer;
 }
 
 .loop-list .loop-projects .loop-items .loop-item .loop-icon-item:hover {
-    color: #666666;
+    color: #999999;
 }
 

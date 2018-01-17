@@ -3,20 +3,25 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "https://fonts.googleapis.com/css?family=Press+Start+2P|Righteous|Roboto";
 
+body {
+  background-color: #222224 !important;
+}
+
 ::-webkit-scrollbar
 {
-  width: 10px;  /* for vertical scrollbars */
-  height: 10px; /* for horizontal scrollbars */
+  width: 20px;  /* for vertical scrollbars */
+  height: 20px; /* for horizontal scrollbars */
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar-track
 {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 ::-webkit-scrollbar-thumb
 {
-  background: #999999;
+  background: #FFD271;
 }
 
 /* COLORS */
@@ -31,7 +36,7 @@
 }
 
 .bgColorPrimary03 {
-  background-color: #F1EFE6 !important;
+  background-color: #222224 !important;
 }
 
 .borderColorPrimary01 {
@@ -99,4 +104,9 @@
 
 .textColorAccent03 {
   color: #00b300 !important;
+}
+
+
+.mat-slider-horizontal .mat-slider-track-background {
+	background-color: #ffffff !important;
 }

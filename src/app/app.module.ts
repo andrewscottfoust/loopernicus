@@ -39,14 +39,16 @@ import { ItemBrowserComponent } from './games/looper/components/item-browser/ite
 import { EditorComponent } from './games/looper/components/editor/editor.component';
 import { LooperHeaderComponent } from './games/looper/components/looper-header/looper-header.component';
 import { SampleManagerComponent } from './games/looper/components/sample-manager/sample-manager.component';
+import { LoopShareComponent } from './games/looper/components/loop-share/loop-share.component';
 
 const appRoutes:Routes = [
-  { path:'', component: LooperComponent, canActivate:[AuthGuard] },
   { path:'register', component: RegisterComponent },
   { path:'login', component: LoginComponent },
   { path:'editor/:id', component: EditorComponent, canActivate:[AuthGuard] },
   { path:'editor', component: EditorComponent, canActivate:[AuthGuard] },
   { path:'patch-manager', component: SampleManagerComponent, canActivate:[AuthGuard] },
+  { path:'share/:id', component: LoopShareComponent },
+  { path:'', component: LooperComponent, canActivate:[AuthGuard] },
   { path:'**', component: PageNotFoundComponent}
 ];
 
@@ -66,7 +68,8 @@ const appRoutes:Routes = [
     ItemBrowserComponent,
     EditorComponent,
     LooperHeaderComponent,
-    SampleManagerComponent
+    SampleManagerComponent,
+    LoopShareComponent
   ],
   imports: [
     BrowserModule,

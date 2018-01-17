@@ -1,0 +1,52 @@
+.loop-share {
+    width: 500px;
+    color: #ffffff;
+    background-color: #161616;
+    border-radius: 10px;
+    border: 2px solid #999999;
+    padding: 20px 20px 20px 20px;
+    margin: 50px auto 50px auto;
+}
+.playButton,
+.stopButton {
+	width: 50px;
+    height: 50px;
+    background-color: #FF0D3E;
+    border-radius: 10px;
+    border: 2px solid;
+    font-size: 20px;
+    color: #ffffff;
+    display: inline-block;
+    text-align: center;
+    margin: 9px 0px 0px 0px;
+    padding: 9px 0px 0px 3px;
+    cursor: pointer;
+}
+.stopButton {
+	font-size: 18px;
+	margin: 9px 0px 0px 0px;
+	padding: 10px 0px 0px 0px;
+}
+.playButton:hover,
+.stopButton:hover {
+	background-color: #999999;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+.loopButton {
+	display: inline-block;
+    cursor: pointer;
+    font-size: 30px;
+    margin: 0px 30px 0px 30px;
+}
+.loopButton.active {
+	color: #FF0D3E;
+}
+.loopButton.active:hover {
+	color: #999999;
+}
+.loopButton:after {
+    content: "";
+	display: table;
+	clear: both;
+}

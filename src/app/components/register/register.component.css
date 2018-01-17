@@ -1,0 +1,21 @@
+.register-component {
+    width: 60%;
+    margin: 50px auto 50px auto;
+    color: #ffffff;
+}
+
+.register-component h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+
+.register-component .btn {
+    background-color: #FF0D3E;
+    border: 2px solid #999999;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.register-component .btn:hover {
+    background-color: #999999;
+}

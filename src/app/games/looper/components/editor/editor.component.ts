@@ -99,7 +99,8 @@ export class EditorComponent implements OnInit, OnDestroy {
   recordTrackNum: number = null;
   projectHasBeenEdited: boolean = false;
   macroEdit: boolean = true;
-  macroTrackDetailsOpen: boolean = false;
+  macroTrackDetailsOpen: boolean = true;
+  measuresArray: any[] = [];
 
   constructor(
     private authService: AuthService,
@@ -131,6 +132,7 @@ export class EditorComponent implements OnInit, OnDestroy {
           this.editorIsCreator = false;
           this.project.name += " Copy";
         }
+        this.updateMeasuresArray();
       });
     } else {
       this.project.volume = .5;
@@ -197,7 +199,7 @@ export class EditorComponent implements OnInit, OnDestroy {
 
     if (confirm("Are you sure you want to delete this loop?")) {
       this.loopsService.deleteLoop(this.id);
-      this.router.navigate(['/games/looper/']);
+      this.router.navigate(['/']);
     }
   }
 
@@ -216,7 +218,6 @@ export class EditorComponent implements OnInit, OnDestroy {
   }
 
   updateMeasures(numMeasures: number) {
-    console.log(this.project);
     let numDifference: number;
     if (numMeasures > this.project.measures) {
 
@@ -278,6 +279,43 @@ export class EditorComponent implements OnInit, OnDestroy {
   /*     TRACK EDITOR     */
   /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
+  duplicateMeasure(measureNum) {
+    let startPosition;
+    for(let t = 0; t < this.project.data.length; t++) {
+      startPosition = measureNum * 16;
+      for(let i = startPosition; i < startPosition + 16; i++) {
+        this.project.data[t].data.push(this.project.data[t].data[i]);
+      }
+    }
+    this.project.measures++;
+    this.updateMeasuresArray();
+  }
+
+  deleteMeasure(measureNum) {
+    let startPosition;
+
+    for(let t = 0; t < this.project.data.length; t++) {
+      startPosition = measureNum * 16;
+      console.log(startPosition, (startPosition + 16));
+      for(let i = startPosition + 15; i >= startPosition; i--) {
+        this.project.data[t].data.splice(i, 1);
+      }
+    }
+
+    this.project.measures--;
+    this.updateMeasuresArray();
+
+    console.log(this.project.data);
+    
+  }
+
+  updateMeasuresArray() {
+    this.measuresArray = [];
+    for(let m = 0; m < this.project.measures; m++) {
+      this.measuresArray.push(m);
+    }
+  }
+
   deleteTrack(trackNum: number) {
     if (confirm("Are you sure you want to delete this track?")) {
       this.project.data.splice(trackNum, 1);
@@ -324,6 +362,7 @@ export class EditorComponent implements OnInit, OnDestroy {
       this.project.data.push(this.createBlankTrackItem(item));
       this.projectPlayer.stop();
       this.projectPlaying = false;
+      this.updateMeasuresArray();
     } else {
       this.project.data[this.editTrackNum].sampleID = item.key;
       this.editTrackNum = null;

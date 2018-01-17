@@ -71,6 +71,7 @@ export class SampleManagerComponent implements OnInit {
       let sample = this.newSamples.files[i];
       this.samplesService.addSample(sample);
     }
+    console.log("addNewSamplesToLibrary");
   }
 
   addNewSamples() {

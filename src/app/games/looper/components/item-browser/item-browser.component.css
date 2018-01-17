@@ -1,17 +1,17 @@
 .itemBrowserContainer {
     font-family: 'Roboto', sans-serif;
-    color: #999999;
+    color: #ffffff;
 }
 .itemBrowserContainer h3 {
     font-size: 18px;
-    color: #999999;
+    color: #ffffff;
     margin: 10px 0px 10px 0px;
 }
 .itemBrowserContainer .closeButton {
     width: 30px;
     text-align: center;
     display: block;
-    color: #999999;
+    color: #ffffff;
     cursor: pointer;
     position: absolute;
     top: 10px;
@@ -19,7 +19,7 @@
 }
 
 .itemBrowserContainer .closeButton:hover {
-    color: #666666;
+    color: #999999;
 }
 
 .itemBrowserContainer .backButton {
@@ -27,13 +27,13 @@
     text-align: left;
     display: block;
     font-size: 12px;
-    color: #999999;
+    color: #ffffff;
     cursor: pointer;
     margin: 10px 0px 10px 0px;
 }
 
 .itemBrowserContainer .backButton:hover {
-    color: #666666;
+    color: #999999;
 }
 
 .itemBrowserContainer .item {
@@ -45,18 +45,18 @@
 
 .itemBrowserContainer .itemButton {
     width: 100%;
-    background-color: #ffffff;
+    background-color: #FF0047;
     border: 2px solid #999999;
     border-radius: 5px;
     font-size: 10px;
     cursor: pointer;
     display: inline-block;
-    color: #999999;
+    color: #ffffff;
     margin-bottom: 0px;
 }
 
 .itemBrowserContainer .itemButton:hover {
-    background-color: #eeeeee;
+    background-color: #999999;
 }
 
 .itemBrowserContainer .itemButton:active {

@@ -82,7 +82,15 @@
   <div *ngIf="macroEdit">
     <div class="macroTrackEditor">
       <div class="tracks">
-        <div class="track" *ngFor="let track of project.data; let t = index;" [class.selected]="t == editTrackNum" [style.width.px]="515 + (project.measures * 740)">
+        <div class="trackFunctions" [style.width.px]="515 + (project.measures * 640)">
+          <div class="trackFunctionsSpacer" [class.open]="macroTrackDetailsOpen">&nbsp;</div>
+          <div class="trackFunction" *ngFor="let measure of measuresArray; let m = index;">
+            <span class="measure-number">{{ m + 1 }}</span>
+            <a class="btn-duplicate-measure" (click)="duplicateMeasure(m)"><i class="fa fa-plus"></i> Duplicate Measure</a>
+            <a class="btn-delete-measure" (click)="deleteMeasure(m)"><i class="fa fa-close"></i> Delete Measure</a>
+          </div>
+        </div>
+        <div class="track" *ngFor="let track of project.data; let t = index;" [class.selected]="t == editTrackNum" [style.width.px]="515 + (project.measures * 640)">
           <div class="trackSettings">
             <div class="top">
               <div class="trackInfo" (click)="changeTrack(t)">

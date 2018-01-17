@@ -1,0 +1,17 @@
+<app-looper-header></app-looper-header>
+<div class="loop-share">
+  <h1>{{ project.name }}</h1>
+  <p>{{ project.category }}</p>
+  <p>{{ project.description }}</p>
+  <p>
+    <a class="playButton borderColorPrimary02" (click)="play()" [hidden]="projectPlayer.projectPlaying" matTooltip="Play" matTooltipPosition="below">
+      <i class="fa fa-play"></i>
+    </a>
+    <a class="stopButton borderColorPrimary02" (click)="stop()" [hidden]="!projectPlayer.projectPlaying" matTooltip="Stop" matTooltipPosition="below">
+      <i class="fa fa-stop"></i>
+    </a>
+    <a class="loopButton" [class.active]="loopPlayback" (click)="handleLoopButtonClick();" matTooltip="Loop playback" matTooltipPosition="below">
+      <i class="fa fa-repeat"></i>
+    </a>
+  </p>
+</div>

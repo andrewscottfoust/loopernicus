@@ -1,18 +1,25 @@
 .looper-header {
     width: 100%;
-    background-color: #F42B17;
+    background-color: #FF0043;
     font-family: 'Righteous', cursive;
-    font-size: 40px;
+    font-size: 38px;
+    letter-spacing: 5px;
     color: #ffffff;
     padding: 4px 10px 4px 10px;
-    border: 2px solid #666666;
-	border-left: none;
-	border-right: none;
+    border: 4px solid #999999;
+    border-left: none;
+    border-right: none;
+}
+
+.looper-header .beta {
+    font-size: 14px;
+    color: #999999;
 }
 
 .looper-header a {
     text-decoration: none;
     color: #ffffff;
+    text-shadow: 4px 4px 2px rgba(150, 150, 150, .5);
 }
 
 .looper-header a:hover {
